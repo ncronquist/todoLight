@@ -74,6 +74,14 @@ $(function() {
     todo.saveToLocalStorage();
   })
 
+  // Mobile click on a Todo will strike it out
+  $(".container").on("tap", '.liTodo', function(e){
+    e.preventDefault();
+
+    this.className = 'liClose';
+    todo.saveToLocalStorage();
+  });
+
   // Right-clicking on a Todo will select it
   $('.container').on('contextmenu', '.liTodo', function(e) {
     e.preventDefault();
@@ -81,6 +89,13 @@ $(function() {
     this.className = "liTodo active";
     todo.saveToLocalStorage();
   })
+
+  $(".container").on("taphold", '.liTodo', function(e){
+    e.preventDefault();
+
+    this.className = "liTodo active";
+    todo.saveToLocalStorage();
+  });
 
     // Right-clicking on an active Todo will deselect it
   $('.container').on('contextmenu', '.liTodo.active', function(e) {
@@ -92,6 +107,18 @@ $(function() {
 
   // Clicking on a Todo that is struck out will close it
   $('.container').on('click','.liClose',function(e) {
+    e.preventDefault();
+
+    // This slideUp("slow"...) visually slides up the deleted item
+    // The function then removes the actual list item and saves the change
+    $(this).slideUp("slow", function() {
+      $(this).remove();
+      todo.saveToLocalStorage();
+    });
+  });
+
+  // Mobile click on a Todo that is struck out will close it
+  $(".container").on("tap", '.liClose', function(e){
     e.preventDefault();
 
     // This slideUp("slow"...) visually slides up the deleted item
