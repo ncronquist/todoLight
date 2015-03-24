@@ -1,0 +1,52 @@
+body {
+  font-size: 20px;
+}
+
+li {
+  max-width: 920px;
+  margin: 10px 0px;
+}
+
+p {
+  margin: 5px 15px;
+}
+
+h3 {
+  margin-top: 0px;
+}
+
+.form-inline .form-control {
+  width: 100%;
+}
+
+.form-inline .form-group {
+  width: 100%;
+}
+
+.btn {
+  width: 100%;
+}
+
+.liClose {
+  text-decoration: line-through;
+}
+
+.liTodo.active {
+  background: #ACFFAC;
+}
+
+li:hover {
+  background: #eee;
+  -webkit-transition: background 0.3s linear;
+  -moz-transition: background 0.3s linear;
+  -o-transition: background 0.3s linear;
+  transition: background 0.3s linear;
+}
+
+.liTodo.active:hover {
+  background: #57CD57;
+  -webkit-transition: background 0.3s linear;
+  -moz-transition: background 0.3s linear;
+  -o-transition: background 0.3s linear;
+  transition: background 0.3s linear;
+}
